@@ -9,7 +9,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6.0.1
+      - uses: actions/checkout@v6.0.2
         with:
           fetch-depth: 0
           token: ${{ secrets.PAT_FOR_PUSHES }}
@@ -22,7 +22,7 @@ jobs:
       - name: Add plugin
         run: poetry self add poetry-plugin-export
       - name: Cache dependencies
-        uses: actions/cache@v5.0.1
+        uses: actions/cache@v5.0.3
         with:
           path: ~/.cache/pypoetry
           key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
